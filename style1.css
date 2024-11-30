@@ -59,12 +59,3 @@ body{
     padding: 5px;
     text-align: justify;
 }
-
-.links{
-    border: 2px solid white;
-    position: absolute;
-    width: 450px;
-    height: 50px;
-    left: 20px;
-    bottom: 50px;
-}

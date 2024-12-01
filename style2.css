@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.principal{
+    border: 2px solid;
+    border-radius: 5px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.C1{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    height: 35px;
+}
+

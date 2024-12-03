@@ -10,27 +10,91 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url(imagens/minimalist\ wallpaper.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .principal{
-    border: 2px solid;
+    border: 2px solid rgba(0, 0, 0, 0.371);
     border-radius: 5px;
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
+    backdrop-filter: blur(5px);
+}
+
+h1{
+    position: absolute;
+    left: 30%;
+    top: 3%;
+    color: white;
 }
 
 input{
-    border: 2px solid black;
+    color: white;
+    border: 2px solid rgba(129, 129, 129, 0.707);
+    background-color: transparent;
     border-radius: 5px;
-    width: 50%;
+    margin: 2px;
+    width: 100%;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.61);
+    position: absolute;
+    left: 5px;
 }
 
 .C1{
-    background-color: aqua;
     display: flex;
+    position: absolute;
     justify-content: center;
-    margin: 5px;
+    margin: 0px;
+    width: 95%;
     height: 35px;
+    top: 80px;
+    left: 15px;
 }
+
+.C2{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin: 0px;
+    width: 95%;
+    height: 35px;
+    top: 130px;
+    left: 15px;
+}
+
+i{
+    position: absolute;
+    transform: translate(50%, 50%);
+    left: -22px;
+}
+
+button{
+    position: absolute;
+    bottom: 30%;
+    left: 20%;
+    width: 60%;
+    height: 25px;
+    border-radius: 60px;
+}
+
+a{
+    position: absolute;
+    bottom: 45%;
+    left: 65%;
+    text-decoration: none;
+    color: white;
+}
+a :hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+
 

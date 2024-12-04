@@ -7,11 +7,7 @@
 
 body{
     display: flex;
-    justify-content: center;
-    background-image: url(imagens/minimalist\ wallpaper.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: black;
 }
 
 header{
@@ -29,7 +25,6 @@ header{
 }
 
 nav{
-    border: 2px solid ;
     display: flex;
     position: relative;
     margin: 2px;
@@ -39,7 +34,8 @@ nav{
 }
 
 nav a{
-    border: 2px solid greenyellow;
+    border: 2px solid #ffffff5e;
+    color: #fff;
     border-radius: 5px;
     text-decoration: none;
     display: flex;
@@ -47,4 +43,10 @@ nav a{
     width: 70px;
     align-items: center;
     justify-content: center;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    color: aqua;
 }

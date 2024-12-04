@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0
+}
+
+body{
+    display: flex;
+}
+
+.c1{
+    border: 2px solid black;
+    border-radius: 0px 20px  20px 0px;
+    height: 737px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c2{
+    border: 2px solid blue;
+    position: absolute;
+    left: 500px;
+    top: 40px;
+    height: 650px;
+    width: 700px;
+}

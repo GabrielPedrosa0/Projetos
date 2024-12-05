@@ -19,7 +19,7 @@ header{
     margin: 2px;
     width: 90px;
     height: 90px;
-    background-image: url(imagens/foto-pessoal.webp);
+    background-image: url(imagens/logop.png);
     background-size: cover;
     background-position: center;
 }
@@ -54,5 +54,35 @@ nav a:hover{
 main{
     color: #fff;
     display: flex;
+    position: relative;
     border: 2px solid white;
+    height: 500px;
+    margin: 5px;
+}
+
+article{
+    border: 2px solid greenyellow;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+.texto{
+    border: 2px solid blue;
+    display: flex;
+    height: 200px;
+    width: 500px;
+    text-align: justify;
+    margin: 5px;
+    padding: 5px;
+}
+
+.i2{
+    border: 2px solid yellow;
+    height: 250px;
+    width: 500px;
+    margin: 5px;
+
 }

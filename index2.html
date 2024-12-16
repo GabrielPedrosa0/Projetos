@@ -16,31 +16,146 @@
                     table data = dado de tabela <td>
     -->
     <p>Primerira tabela</p>
-    <table>
-        <tr> <!-- Primeira linha -->
-            <td>A1</td>
-            <td>B1</td>
-            <td>C1</td>
+    <table class="t1">
+        <tr class="tr1"> <!-- Primeira linha -->
+            <td class="td1">A1</td>
+            <td class="td1">B1</td>
+            <td class="td1">C1</td>
         </tr>
-        <tr> <!-- Segunda linha -->
-           <td>A2</td>
-           <td>B2</td>
-           <td class="numero">C2</td> 
+        <tr class="tr1"> <!-- Segunda linha -->
+           <td class="td1">A2</td> 
+           <td class="td1">B2</td>
+           <td class="td1">C2</td> 
         </tr>
-        <tr> <!-- Terceira linha -->
-            <td>A3</td>
-            <td>B3</td>
-            <td>C3</td>
+        <tr class="tr1"> <!-- Terceira linha -->
+            <td class="td1">A3</td>
+            <td class="td1">B3</td>
+            <td class="td1">C3</td>
         </tr>
-        <tr> <!-- Quarta linha -->
-            <td>A4</td>
-            <td>B4</td>
-            <td class="numero">C4</td>
+        <tr class="tr1"> <!-- Quarta linha -->
+            <td class="td1">A4</td>
+            <td class="td1">B4</td>
+            <td class="td1">C4</td>
         </tr>
     </table>
+    <h1>Uso de tabelas Grandes</h1>    
     <p>Segunda tabela</p>
-    <table class="2">
 
+    <!--
+        Anatomia para tabelas grandes
+
+        table
+            caption = legenda da tabela
+                não pode ter tr, td e th
+            thead = cabeça <(não necessariamente é preciso ter a cabeçã ou cabeçalho)
+              tr, td, th  <pode ter dentro
+            tbody = corpo
+              tr, td, th  
+            tfodt = rodape <(não necessariamente é preciso ter um rodaper)
+              tr, td, th  
+    -->
+
+    <table>
+        <caption>População das Unidades Federativas</caption>
+        <thead>
+            <tr>
+                <th scope="col">Estado</th> 
+                <!-- Quando usar o th? quando for ter um "titulo" como esse -->
+                <th scope="col" style="width: 100px;">População</th> 
+                <!-- o scope="col" foi colocado para deixar claro para o html que os dados desse titulo estão na mesma coluna -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>São paulo</td> <!-- os td são os dados de uma tabela -->
+                <td class="numero">45 973 19049</td>
+            </tr>
+            <tr>
+                <td>Minas Gerais</td>
+                <td class="numero">21 322 692</td>
+            </tr>
+            <tr>
+                <td>Rio de Janeiro</td>
+                <td class="numero">17 219 679</td>
+            </tr>
+                <td>Rio Grande do Sul</td>
+                <td class="numero">11 229 915	</td>
+            </tr>
+            <tr>
+                <td>Pernambuco</td>
+                <td class="numero">9 539 029</td>
+            </tr>
+            <tr>
+                <td>Ceará</td>
+                <td class="numero">9 233 656</td>
+            </tr>
+            <tr>
+                <td>Pará</td>
+                <td class="numero">8 664 306</td>
+            </tr>
+            <tr>
+                <td>Santa Catarina</td>
+                <td class="numero">8 058 447</td>
+            </tr>
+            <tr>
+                <td>Goiás</td>
+                <td class="numero">7 350 483</td>
+            </tr>
+            <tr>
+                <td>Maranhão</td>
+                <td class="numero">7 010 960</td>
+            </tr>
+            <tr>
+                <td>Amazonas</td>
+                <td class="numero">4 281 209</td>
+            </tr>
+            <tr>
+                <td>Paraíba</td>
+                <td class="numero">4 145 040</td>
+            </tr>
+            <tr>
+                <td>Espiro Santo</td>
+                <td class="numero">4 102 129</td>
+            </tr>
+            <tr>
+                <td>Mato Groso</td>
+                <td class="numero">3 836 399</td>
+            </tr>
+            <tr>
+                <td>Rio Gande do Norte</td>
+                <td class="numero">3 446 071</td>
+            </tr>
+            <tr>
+                <td>Piauí</td>
+                <td class="numero">3 375 646</td>
+            </tr>
+            <tr>
+                <td>Alagoas</td>
+                <td class="numero">3 220 104</td>
+            </tr>
+            <tr>
+                <td>Distrito Federal</td>
+                <td class="numero">2 982 815</td>
+            </tr>
+            <tr>
+                <td>Sergipe</td>
+                <td class="numero">2 901 895</td>
+            </tr>
+            <tr>
+                <td>Rondônia</td>
+                <td class="numero">1 746 227</td>
+            </tr>
+            <tr>
+                <td>Tocantis</td>
+                <td class="numero">1 577 342</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">Total de Habitantes</th> <!-- já o titulo "total de habitantes" o dado não esta na mesma coluna esta na mesma linha, por isso usamos o "row" -->
+                <td class="numero"><strong>21 2506 680</strong></td>
+            </tr>
+        </tfoot>
     </table>
 </body>
 </html>

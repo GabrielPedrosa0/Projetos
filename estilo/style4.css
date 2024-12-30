@@ -20,7 +20,7 @@ td.td1{
 }
 
 /*segunda tabela*/
-table{
+table.t2{
     width: 500px;
     border-collapse: collapse;
 }
@@ -35,7 +35,7 @@ caption{
     padding: 10px;
     background-color: lightgray;
 }
-tbody > tr:nth-child(2n){ 
+tbody > tr.tr2:nth-child(2n){ 
     /* 
         a propriedade 'nth-child()' foi colocado para ter um efeito 'zebrado' no corpo da tabela e o (2n)> indica de quantas linha deve ter o efeio no caso 2n, contarar duas linhas e na segunda linha terar uma cor diferente para facilitar a leitura dos dasos da tabela
         no lugar de (2n) pode-se colocar 'odd' e 'even' 
@@ -56,3 +56,12 @@ thead, tfoot{
 .numero{
     text-align: right;
 }
+
+/*tesceira tabela*/
+
+table{
+    border-collapse: collapse;
+    width: 300px;
+}
+
+

@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
-iframe{
+iframe.ex1{
     width: 400px;
     height: 400px;
+}
+
+iframe.ex2{
+    width: 800px;
+    height: 300px;
 }

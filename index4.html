@@ -8,12 +8,501 @@
 <body>
     <h1>Trabalhando com formulários</h1>
     <p>Meu primeiro formulário</p>
-    <form action="cadastro.php" autocomplete="off"> <!-- o "action" informa para onde os dados serão enviados ele presisa estar junto com o 'submit' -->
-        <p><label for="inome">Nome:</label> <!--no "for" ou colocar o 'name' ou o 'id'-->
-            <input type="text" name="nome" id="inome"></p>
+    <form action="cadastro.php" method="post" autocomplete="off"> 
+        <!-- o "action" informa para onde os dados serão enviados ele presisa estar junto com o 'submit' -->
+         <!--
+            o "method" serve para 'proteger' os dados do úsuario, mas ele só não mostra na url
+
+            Pode usar dois tipos no method o "post" e "get"
+
+            O post não mostra os dados na url já o gat dixa visivel na  url para os úsuarios, use o post quando for trabalhar com dados sensiveis como senhas
+
+            Mas isso não quer dizer que o post é 100% seguro ele não criptogrifa os seus dados
+
+            Para deixar os seus dados seguros sera preciso aprender uma linguagem de programação e estudar conteúdos como https 
+         -->
+        <p><label for="inome">Nome:</label> 
+        <!--
+            no "for" ou colocar o 'name' ou o 'id'
+            
+            o 'nome' é importamte para HTML para PHP
+
+            o 'id' é importamte para o label para fazer relação com o label e o JavaScript
+        -->
+            <input type="text" name="nome" id="inome"></p> 
         <p><label for="isobrenome">Sobrenome:</label> 
             <input type="text" name="sobrenome" id="isobrenome"></p>
         <p><input type="submit" value="Enviar"></p>
     </form>
+    <p>Sgundo Formulário</p>
+    <form action="" method="post" autocomplete="on">
+        <p>
+            <label for="iusu">Usuário:</label>
+            <input type="text" name="usu" id="iusu" required minlength="5" maxlength="15" placeholder="Seu nome ou apelido" autocomplete="username">
+            <!--o atributo "required" imforma que aquele campo é obrigatorio
+
+            o atributo "minlength" é o minimo de caracteras que se deve ter e o "maxlength" é o maximo que se pode ter-->
+        </p>
+        <p>
+            <label for="isen">Senha:</label>
+            <input type="password" name="sen" id="isen" required minlength="5" maxlength="8" placeholder="Sua senha" autocomplete="current-password"> <!--o atributo "placeholder" serve para fazer com que o texto apareca dentro da caixa-->
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+    <p>Terceirp Formulário</p>
+    <form action="" method="get" autocomplete="on">
+        <p>
+            <label for="inome">Nome</label>
+            <input type="text" name="nome" id="inome" required maxlength="30" placeholder="Nome completo" autocomplete="name">
+        </p>
+        <p>
+            <label for="imedia">Média</label>
+            <input type="number" name="media" id="imedia" min="0" max="10" placeholder="0 a 10" step="0.5" required>
+        </p>
+        <p>
+            <label for="imes">Período Letivo</label>
+            <input type="month" name="mes" id="imes" value="2025-01">
+        </p>
+        <p>
+            <label for="idia">Dia da Prova</label>
+            <input type="date" name="dia" id="idia">
+        </p>
+        <p>
+            <label for="ihora">Horário da Prova</label>
+            <input type="time" name="hora" id="ihora">
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+        <!--
+        ✅ Inputs:
+
+            number: Só aceita números, com botões giratórios pra ajustar valores. Placeholder funciona normalmente.
+
+            month: Seleção de mês e ano, com menu interativo. Formato enviado: yyyy-mm.
+
+            date: Para datas completas (dia/mês/ano), com calendário. Formato: yyyy-mm-dd.
+
+            time: Para hora e minuto (opcionalmente segundos). Formato: hh:mm.
+
+        ✅ Atributos úteis:
+
+            min/max: Define valores mínimos e máximos. Mostra alerta se ultrapassado.
+
+            step: Define o intervalo de avanço nos botões giratórios (ex: de 3 em 3).
+
+            value: Preenche o input com um valor inicial (invalida o placeholder).
+
+            Dica: Use <label> ou placeholder pra orientar o usuário.
+        -->
+    </form>
+    <p>Quarto Formulário</p>
+    <form action="" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <p>
+                <label for="iemail">E-mail</label>
+                <input type="email" name="email" id="iemail" required autocomplete="email">
+            </p>
+            <p>
+                <label for="itel">Telefone</label>
+                <input type="tel" name="tel" id="itel" autocomplete="tel" required>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+    <p>Quinto Formulário</p>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="isxmas" value="M"> <label for="isxmas">Masculino</label>
+            <input type="radio" name="sexo" id="isxfem" value="F"> <label for="isxfem">Feminino</label>
+            <input type="radio" name="sexo" id="isxpd" checked> <label for="isxpd">Prefiro não Dizer</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Esportes favoritos</legend>
+            <input type="checkbox" name="esfut" id="iesfut"><label for="iesfut">Futebol</label> <br>
+            <input type="checkbox" name="esbas" id="iesbas"><label for="iesbas">Basquete</label> <br>
+            <input type="checkbox" name="esnat" id="iesnat"><label for="iesnat">Natação</label> <br>
+            <input type="checkbox" name="esten" id="iesten"><label for="iesten">Tênis</label> <br>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+        <!--
+        
+        TIPOS DE INPUT PARA FORMULÁRIOS:
+
+            checkbox:
+
+            O input do tipo checkbox define uma caixa de seleção. A caixa de seleção é mostrada como uma pequena box quadrada que pode ser marcada pelo usuário com um clique (marca de verificação). 
+
+            As caixas de seleção são usadas para permitir que o usuário selecione uma ou mais opções dentre um número limitado de opções. A possibilidade de selecionar mais de um item AO MESMO TEMPO é uma característica fundamental do input checkbox. 
+
+            Sendo que somente os valores das caixas marcadas pelo usuário que serão enviados para o back-end quando a submissão do form for executada.
+
+            Dependendo do seu projeto, você pode trabalhar com uma ou mais caixas de checagem no seu formulário. A quantidade de caixas de checagem (opções) contidas no seu form vai depender da necessidade da sua aplicação.
+            
+            O checkbox é um input de entrada como qualquer outro, portanto ele também precisa de uma label. Geralmente, para esse tipo de controle, no HTML nós inserimos o código do input ANTES do código da label, dessa forma a caixa de seleção fica na frente da label... 
+
+            No entanto, você também pode fazer o inverso e inserir o código do input após o código da label, posicionando a label na frente da caixa de seleção. 
+
+            Atenção: No input checkbox, os atributos "name" e "id" também devem ser configurados normalmente... No entanto, quando você tem mais de um checkbox no seu form e essas caixas de seleção representam diferentes opções dentro de um mesmo contexto, é recomentado atribuir a mesma nomenclatura para os atributos "name" dessas caixas de seleção, assim especificamos que essas boxes são de um mesmo grupo e portanto elas representam diferentes opções dentro de um mesmo assunto. Assim quando o usuário selecionar as opções de seu interesse, esses dados serão enviados para o servidor identificados com o mesmo nome, indicando que fazem parte de um mesmo grupo checkbox.
+
+            Dessa forma, os atributos "name" são sempre iguais para cada grupo de checkbox... Por exemplo: Se no seu form você tiver DOIS GRUPOS de checkbox, para dois tipos de informações que não são correlacionadas, aí sim um desses grupos vai ter um name e o outro grupo um name diferente, desvinculando os grupos (já o id é sempre único para cada checkbox individualmente). Sendo que o VÍNCULO entre o componente checkbox e sua respectiva label também deve ser estabelecido.
+
+            Uma outra característica importantíssima do input checkbox: Como sabemos, diferentemente de outros inputs, no checkbox o usuário não insere um dado digitando, ele simplesmente marca a opção que lhe atende...
+
+            Dessa maneira, para o funcionamento correto de uma caixa de seleção, é necessário que especifiquemos um atributo "value" para a mesma... (insira o value dentro da tag do input)
+
+            Determinando assim o valor (DADO) que aquela caixa de seleção REPRESENTA. O conteúdo contido nesse value que será enviado para o servidor no par nome-valor na hora da submissão do form (num checkbox: par nome-valor = atributos 'name' e 'value' respectivamente).
+
+            Obs.: Se você não definir um atributo value para o checkbox, o dado que será enviado contido no par nome-valor será um dado genérico "on". 
+
+            Segue um exemplo de código com inputs do tipo checkbox:
+
+            <form action="cadastro.php" method="get">
+                <fieldset>
+                <legend>Qual dessas é a sua linguagem de programação preferida?</legend> 
+                
+                <input type="checkbox" name="linguagem" id="js" value="JavaScript">
+                <label for="js">JavaScript</label>
+
+                <input type="checkbox" name="linguagem" id="php" value="PHP">
+                <label for="php">PHP</label>
+
+                <input type="checkbox" name="linguagem" id="python" value="Python"> 
+                <label for="python">Python</label>
+                </fieldset>
+            </form>
+
+            Dessa forma, o checkbox ou caixa de seleção nada mais é que um tipo de campo que já contém informações predefinidas e que o usuário deverá marcar, dispondo da possibilidade de ativar e desativar valores individuais... Tendo a opção de selecionar nenhuma, uma ou mais caixas (somente os valores das caixas marcadas que serão enviados para o back-end).
+
+            radio:
+
+            O input do tipo radio define um radio botton (botão de rádio). O botão de rádio é mostrado como um pequeno círculo que pode ser selecionado pelo usuário com um clique. Esse elemento geralmente é usado em grupos (radio groups)... Ou seja, vários botões de rádio juntos formam um radio group (grupo).
+
+            Os radio buttons são usados para permitir que o usuário selecione uma opção dentre um número limitado de opções. A possibilidade de selecionar APENAS UM ITEM dentre os disponíveis em um grupo é uma característica fundamental do input radio. Ao clicar em uma opção quando outra já está marcada, faz com que aquela opção marcada se desmarque automaticamente. Você pode ter vários grupos distintos de radio buttons no mesmo formulário, podendo fazer a seleção de apenas um item em cada um desses grupos.
+
+            Nota: Uma característica peculiar do input radio é que quando uma opção é selecionada, se clicarmos novamente, a seleção não sai... Dentro de um grupo, você até pode clicar em outra opção para desmarcar a atual, mas a partir do momento que uma opção é selecionada, não é mais possível deixar as opções do grupo em branco novamente sem ter que recarregar a página (fora isso a função do input "reset" também consegue deixar as opções em branco novamente). Isso aparentemente ocorre porque os radio buttons teoricamente foram concebidos para não serem deixados em branco.
+
+            Sendo que somente o valor do botão selecionado pelo usuário que será enviado para o back-end quando a submissão do form for executada.
+
+            Dependendo do seu projeto, você pode trabalhar com um ou mais botões de rádio no seu formulário. A quantidade de radio buttons (opções) contidas no seu form vai depender da necessidade da sua aplicação.
+
+            O radio é um input de entrada como qualquer outro, portanto ele também precisa de uma label. Geralmente, para esse tipo de controle, no HTML nós inserimos o código do input ANTES do código da label, dessa forma a caixa de seleção fica na frente da label... 
+
+            No entanto, você também pode fazer o inverso e inserir o código do input após o código da label, posicionando a label na frente da caixa de seleção. 
+
+            Atenção: No input radio, os atributos "name" e "id" também devem ser configurados normalmente... No entanto, quando você tem mais de um radio button no seu form e esses botões representam diferentes opções dentro de um mesmo contexto, é obrigatório atribuir a mesma nomenclatura para os atributos "name" desses radio buttons, assim especificamos que esses botões são de um mesmo grupo e portanto eles representam diferentes opções dentro de um mesmo assunto.
+            
+            No caso dos radio buttons, é muito importante que você faça como foi orientado acima e atribua a mesma nomenclatura para os atributos "name", definindo um grupo. A característica fundamental desse tipo de input é que dentre as opções disponíveis, o usuário só possa escolher uma... Entretanto, se você não definir uma mesma nomenclatura para os atributos "name" dos inputs que supostamente formam aquele grupo, a funcionalidade de escolher apenas uma opção é comprometida e anulada (passando a poder escolher 'mais de uma' opção), visto que o sistema considera esses inputs com names diferentes como grupos diferentes.
+
+            Dessa forma, os atributos "name" são sempre iguais para cada grupo de radio buttons... Por exemplo: Se no seu form você tiver DOIS GRUPOS de radio buttons, para dois tipos de informações que não são correlacionadas, aí sim um desses grupos vai ter um name e o outro grupo um name diferente, desvinculando os grupos (já o id é sempre único para cada radio button individualmente). Sendo que o VÍNCULO entre o componente radio e sua respectiva label também deve ser estabelecido.
+
+            Uma outra característica importantíssima do input radio: Como sabemos, diferentemente de outros inputs, no radio o usuário não insere um dado digitando, ele simplesmente seleciona a opção que lhe atende...
+
+            Dessa maneira, para o funcionamento correto de um radio button, é necessário que especifiquemos um atributo "value" para a mesmo... (insira o value dentro da tag do input)
+
+            Determinando assim o valor (DADO) que aquele radio button REPRESENTA. O conteúdo contido nesse value que será enviado para o servidor no par nome-valor na hora da submissão do form (num radio: par nome-valor = atributos 'name' e 'value' respectivamente).
+
+            Obs.: Se você não definir um atributo value para o radio, o dado que será enviado contido no par nome-valor será um dado genérico "on". 
+
+            Segue um exemplo de código com inputs do tipo radio:
+
+            <form action="cadastro.php" method="get">
+                <fieldset>
+                    <legend>Escolha a opção que lhe atende:</legend>
+                            
+                    <input type="radio" name="opcao" id="masculino" value="M">
+                    <label for="masculino">Masculino</label>
+
+                    <input type="radio" name="opcao" id="feminino" value="F">
+                    <label for="feminino">Feminino</label>
+                </fieldset>
+            </form>
+
+            Dessa forma, o radio ou botão de rádio nada mais é que um tipo de campo que já contém informações predefinidas e que o usuário deverá marcar... Tendo a opção de selecionar nenhuma ou uma caixa por grupo (somente o valor da caixa marcada que será enviado para o back-end).
+
+        -->
+    </form>
+    <p>Sexto Formulário</p>
+    <form action="" method="post">
+        <p>
+            <label for="icor">Cor: </label>
+            <input type="color" name="cor" id="icor">
+        </p>
+
+        <p>
+            <label for="inivel">Nínel de Satisfação: </label>
+            <input type="range" name="nivel" id="inivel" min="1" max="5" value="5">
+        </p>
+
+        <p>
+            <label for="ifoto">Foto do perfil:</label>
+            <input type="file" name="Foto" id="ifoto">
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+        <!--
+            file:
+
+            O input do tipo file permite que o usuário escolha um arquivo do armazenamento do dispositivo e envie esse arquivo através de um formulário HTML, sendo que o elemento é mostrado como um botão que possui uma espécie de "nota de status" ao seu lado... Essa nota faz referência ao arquivo anexado. 
+
+            Dessa forma, quando seus usuários precisarem fazer upload de alguma coisa para o seu sistema, trabalhe com o input file.
+
+            Depois de escolhido, o arquivo é enviado para o servidor quando a submissão do é executada (para enviar arquivos, lembre-se que sempre usamos o método post, sendo que o back-end também precisa ser configurado corretamente para fazer o tratamento dos arquivos recebidos).
+
+            O input file aceita a entrada de qualquer tipo de arquivo, como por exemplo: Imagens, áudios, vídeos, documentos do word, PDF's e por aí vai... 
+
+            Importante: Pode parecer estranho, mas apenas com o input do tipo file, o arquivo anexado pelo usuário não será enviado para o back-end da forma correta e o servidor não será capaz de interpretar os DADOS DO ARQUIVO corretamente. Para que de fato o servidor receba da forma correta esse arquivo enviado pelo formulário, é necessário que façamos uso do atribulo " enctype " (logo abaixo uma explicação sobre esse atributo).
+
+            Atributos próprios do input file:
+
+            enctype:
+
+            O atributo enctype especifica COMO os dados do formulário devem ser CODIFICADOS ao enviá-los para o servidor. Atenção: não é ele que faz o envio dos dados, ele apenas determina a forma de codificação desses dados. O protocolo HTTP que é usado para enviar os dados do formulário do cliente para o servidor, mas o atributo enctype especifica como os dados do formulário devem ser codificados antes de serem enviados.
+
+            A codificação é o processo de converter os dados em um formato específico antes de enviá-los para o servidor (servidor = software escrito em alguma linguagem de programação que está executando no server e que recebe e processa os dados do formulário enviados pelo cliente). Essa codificação é feita para garantir que os dados sejam transmitidos corretamente e possam ser interpretados pelo servidor. 
+
+            Basicamente, essa codificação é importante porque um ARQUIVO é composto por DADOS BINÁRIOS, que para serem interpretados adequadamente pelo server, precisam ser codificados em um formato específico antes de serem enviados. Todos os arquivos são armazenados como dados binários em um computador ou dispositivo de armazenamento. Isso inclui arquivos de imagens, texto, áudio, vídeo e outros tipos de arquivos. Dados binários são dados que não são representados como texto, mas sim como uma sequência de bytes que representam o conteúdo do arquivo. 
+
+            Por exemplo, um arquivo de imagem é armazenado como uma sequência de bytes (dados binários) que representam as cores dos pixels. Já um arquivo de texto é armazenado como uma sequência de bytes, onde cada byte representa um caractere. Quando um arquivo é lido por um programa, os dados binários são interpretados de acordo com o formato do arquivo para exibir o conteúdo ao usuário.
+
+            Quando os dados binários são transmitidos através de uma rede, eles são enviados como uma sequência de bytes. Portanto, os bytes são a unidade básica de informação usada para armazenar e transmitir dados binários.
+
+            O atributo enctype, configurado da forma correta, é usado para codificar os dados binários do arquivo de uma maneira que permite que eles sejam transmitidos junto com os outros dados do formulário de forma individual e possam ser interpretados corretamente pelo servidor. Isso é importante porque os dados binários podem conter bytes que não são representáveis como texto ou que têm um significado especial em texto, necessitando desse processamento extra para o formato correto antes do envio. Dessa forma, se o seu form vai enviar um arquivo, o uso do atributo enctype configurado da forma adequada é obrigatório.
+
+            Como usar o atributo enctype?
+
+            O atributo enctype deve ser inserido dentro da tag de abertura do formulário (<form>), sendo que ele só pode ser usado se o método de envio dos dados for "post". Isso ocorre porque o método get envia os dados do formulário na URL, pelo cabeçalho da mensagem HTTP e não suporta o envio de dados binários, como arquivos. 
+
+            O atributo enctype aceita três possíveis valores, que são:
+
+            application/x-www-form-urlencoded - Esse é o valor padrão do atributo enctype, se não especificarmos nada, é esse valor que vai prevalecer. Ele codifica todos os caracteres antes de enviá-los 
+            (espaços são convertidos em símbolos “+” e caracteres especiais são convertidos em valores ASCII HEX - 
+            sequência de caracteres que começa com um sinal de porcentagem % seguido por dois dígitos hexadecimais)... Ou seja, é um valor que só estabelece uma codificação para os dados em forma de caracteres, mas não para arquivos. Ele não é adequado para enviar arquivos. 
+
+            Nota: Como já foi dito, para utilizar o atributo enctype, o método de envio dos dados do formulário precisa ser "post". Entretanto, formulários configurados com o método get utilizam por padrão a forma de codificação "application/x-www-form-urlencoded" no envio... A questão aqui é que em formulários do tipo get, não podemos alterar essa forma de codificação padrão. Por isso que o atributo enctype só é válido para formulários tipo post (ao tentar usar enctype em formulários get, o atributo é simplesmente ignorado pelo sistema).
+
+            multipart/form-data - No caso dos arquivos, esse valor é o mais importante. Ele é obrigatoriamente necessário se o seu formulário for enviar um arquivo, visto que ele tem a função de CODIFICAR os dados do arquivo de modo que o servidor possa receber e interpretar corretamente. 
+
+            Se o formulário da sua página vai enviar um arquivo, a configuração desse formulário com o atributo "enctype" com o valor "multipart/form-data" é obrigatória, visto que ele faz justamente esse processamento adicional. Caso essa configuração seja negligenciada (enctype="multipart/form-data"), o back-end simplesmente irá negar o arquivo, já que não conseguirá fazer uma interpretação correta do mesmo. 
+
+            Quando usamos o valor "multipart/form-data", os dados do formulário são codificados de uma maneira diferente. Cada campo do formulário, incluindo os campos de arquivo, é enviado como uma parte separada da mensagem, com um cabeçalho que especifica o nome do campo e o tipo de conteúdo (sendo que o conteúdo vai pelo corpo). O dado de cada campo é enviado de forma individual. Isso permite que os dados binários dos arquivos sejam enviados junto com os outros dados do formulário. Cada campo do formulário é enviado como uma parte separada da mensagem.
+
+            text/plain - Com esse valor, o formulário envia os dados sem qualquer codificação. Esse valor é raramente usado. Quando usado, serve para fazer depuração ou testes (o uso desse valor pode resultar em problemas de interpretação dos dados pelo servidor e implicações na segurança).
+        -->
+    </form>
+    <p>Sétimo Formulário</p>
+    <form action="" method="post">
+        <p>
+            <label for="iest">Estado</label>
+            <select name="estado" id="iest">
+
+                <option value="" selected>--- Escolha ---</option>
+                <optgroup label="Região Nordeste">
+                    <option value="CE">Ceará</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="MA">Maranhão</option>
+                </optgroup>
+
+                <optgroup label="Região Sudeste">
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <label for="iprof">Profissão:</label>
+            <input type="text" name="prof" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option>Adiministrador</option>
+                <option>Contabilista</option>
+                <option>DEsenvolvedor</option>
+                <option>Professor</option>
+            </datalist>
+        </p>
+
+        <p>
+            <label for="imsg">Mansagem</label> <br>
+            <textarea name="meng" id="imsg" cols="20" rows="5" placeholder="Sua Mansagem"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+        <!--
+            ELEMENTO SELECT:
+
+            A tag de formulário <select></select> tem uma função muito parecida com a de um input.. Isso porque ela renderiza na tela um componente de entrada para o formulário.
+
+            O elemento HTML select (<select>) representa um controle que exibe um menu de opções. É um elemento que ao clicarmos, desce uma lista com diferentes opções para escolher.
+
+            No elemento select, o usuário não insere um dado digitando, ele simplesmente seleciona a opção que lhe atende... Portanto, use esse elemento para a entrada de dados que são imutáveis. Por exemplo: Usar o elemento select para escolher um dos estados do Brasil. Não existe necessidade de alguém eventualmente precisar escolher outro item que já não esteja na lista porque a composição dos estados é teoricamente imutável.
+
+            Nota: No elemento select, os atributos "name" e "id" também devem ser configurados normalmente... Ele também se enquadra em um componente de entrada como qualquer outro, portanto também precisa de uma label. Sendo que o VÍNCULO entre o componente select e sua respectiva label também deve ser estabelecido. 
+
+            Depois de inserir o select no seu form, é preciso definir as opções que irão compor a lista de seleção dele. Para definir as opões do elemento, usamos a tag <option></option>.
+
+            Essa tag deve ser inserida dentro do elemento select (option é sempre introduzido como filho de select nesse caso), sendo que ela tem a função de definir as opções aparecerão dentro do menu de seleção. Para cada opção da lista, um novo option deve ser aberto dentro de select.
+
+            O rótulo da opção (texto que representa o item de lista quando a caixa de seleção é aberta) deve ser inserido dentro do par de tags do option, por exemplo: <option>Santa Catarina</option>. 
+
+            Sendo que por padrão, quando uma tag option é aberta, um atributo "value" já acompanha a tag. É o conteúdo dentro de "value" que de fato será enviado para o servidor quando a submissão do form é executada. Seguindo o exemplo anterior, a nossa opção com o value configurado pode ser assim: <option value="SC">Santa Catarina</option>
+
+            Dentro de uma lista de seleção do elemento select, os options (itens da lista) podem ser AGRUPADOS em categorias intituladas, isso facilita a navegação do usuário. Por exemplo, na nossa lista com os estados do Brasil, poderíamos organizar esses estados pelas regiões do país, categorizar eles por região... Dessa maneira, quando a lista de seleção for aberta, os estados iriam aparecer agrupados por região, sendo que cada um desses grupos de estado teriam um título (sudeste, sul, centro-oeste e por aí vai).
+
+            Para fazer isso, utilizamos a tag <optgroup></optgroup>. Para formar um grupo dentro da lista de seleção com o optgroup, você deve envelopar com essa tag os itens (options) que supostamente fazem parte daquele grupo. Sendo que obrigatoriamente, quando uma tag optgroup é aberta, temos que usar nela o atributo "label" (é um atributo que se chama label, não é uma tag label). O texto inserido dentro do atributo label que será exibido para o usuário como o título daquele grupo quando a lista for aberta.  
+
+            Nota: Os itens da lista de seleção (options) ficam dispostos para o usuário na ordem de inserção do código HTML. 
+
+            Atributos do select:
+
+            selected:
+
+            O atributo selected serve para definirmos uma opção inicial padrão, ele deve ser inserido dentro da tag de abertura do option que você deseja definir como padrão. Dessa forma, quando a página com o elemento select for carregada, essa opção escolhida já vai aparecer por padrão selecionada no componente de entrada select, ficando a critério do usuário alterar a opção ou manter a padrão determinada por você.
+        -->
+    </form>
+
+    <p>Oitavo Formulário</p>
+    <form action="" method="post">
+        <p>
+            <label for="in1">Número 1:</label>
+            <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma .innerHTML = Number(in1.value) + Number(in2.value)">
+        </p>
+
+        <p>
+            <label for="in2">Número 2:</label>
+            <input type="number" name="n2" id="in2" min="0" max="50" required oninput="isoma .innerHTML = Number(in1.value) + Number(in2.value)">
+        </p>
+
+        <p>
+            <label for="isoma">Soma:</label>
+            <output name="soma" id="isoma">0</output>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+        <!--
+            O <output></output> se trata de um elemento de saída, utilizado somente para fins de exibição. É um elemento no qual um processo programado pode injetar os resultados de um cálculo ou o resultado de uma ação do usuário por exemplo.
+
+            Por ser um elemento de saída, isso significa que: Quando utilizado, a tag de formulário output deve estar associada a um script. O resultado gerado por esse script, como um número por exemplo, deve ser renderizado no elemento output.
+
+            Segue um exemplo de código HTML usando o output (contém um script simples também):
+
+            <form action="cadastro.php" method="get">
+                <fieldset>
+                    <legend>Teste - output</legend>
+
+                    <label for="n1">Digite o primeiro número:</label>
+                    <input type="number" name="n1" id="n1" required oninput="resultado.innerHTML 
+                    = Number(n1.value) + Number(n2.value)">
+
+                    <label for="n2">Digite o segundo número:</label>
+                    <input type="number" name="n2" id="n2" required oninput="resultado.innerHTML 
+                    = Number(n1.value) + Number(n2.value)">
+
+                    <label for="resultado">Resultado da soma:</label>
+                    <output for="n1 n2" id="resultado"></output>
+
+                    <div>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Limpar">
+                    </div>
+                </fieldset>
+            </form>
+
+            No exemplo de código acima, nós criamos um sistema simples que tem como função somar os números introduzidos no primeiro e no segundo campo, sendo que o resultado dessa soma é exibido no elemento output.
+
+            Nesse exemplo, nós temos dois elementos de entrada para números (inputs tipo number) e logo abaixo deles há uma tag de formulário "output". Basicamente, dentro dos inputs que recebem os números, temos o atributo "oninput" com um script em JS que faz esse cálculo de somatória e exibe o resultado no elemento de saída output (os scripts são idênticos em ambos os atributos oninput dos campos). 
+
+            Nota: De forma resumida, o atributo "oninput" contido nas caixas de entrada numéricas é utilizado para executar uma ação quando o usuário digita algo no controle ou altera o valor do campo. Nesse caso, o nosso script de soma está contido nesses atributos como valor deles... Dessa forma, qualquer alteração nos campos numéricos fará a ação do script de soma ser disparada. Lembre-se que o intuito aqui não é explicar como o código do script funciona, e sim mostrar como o elemento output trabalha. 
+
+            Observe no exemplo que foi atribuído ao elemento de saída (output) um id nomeado como "resultado". Já no script, foi especificado que o número resultante da somatória seria exibido nesse output... Só foi possível fazer isso porque o output foi justamente identificado com esse id. 
+
+            Dessa forma, sempre que você usar o elemento output, é indicado configurá-lo com um "id" ou "name"... Mas quando usar id ou name no output?  
+
+            Atribuir um id ou name para o elemento <output> é útil quando você quer acessá-lo usando JavaScript (ou outra linguagem) para atualizar seu valor. Se você quiser acessar um elemento <output> específico usando JavaScript, é geralmente mais fácil e mais eficiente fazê-lo pelo seu id. 
+
+            Por outro lado, se você quiser acessar vários elementos <output> que compartilham o mesmo atributo name (sendo que no id não existe essa possibilidade visto que ele é único), pode ser mais fácil fazê-lo pelo name.
+
+            Portanto, se o seu script trabalha utilizando apenas um elemento output, use o id para identificá-lo... Já se esse script trabalha usando vários componentes output ao mesmo tempo, opte pelo name. (Também não é problema usar o id e o name ao mesmo tempo em um output, tudo vai depender da necessidade da sua aplicação).
+
+            Perceba que no nosso exemplo o output também possui uma label... Não é algo obrigatório, mas é perfeitamente possível e recomendado atribuir uma label a um output, visto que ele é considerado um elemento "rotulável"... Sendo que podemos estabelecer o vínculo entre a label e o componente output normalmente também.
+
+            Atenção: Em componentes de entrada para formulários (inputs) usamos o name e id para identificar o campo no servidor, criar vínculos com labels e etc... Já no elemento output, nós só usamos esses atributos de identificação para conseguir associar o elemento de saída com um script (com labels também no caso dos id's), e não para enviar dados identificados para o back-end. 
+
+            Isso se deve porque o valor do elemento <output> NÃO é enviado para o servidor quando um formulário é enviado/submetido. É possível enviar para o servidor aquilo que é renderizado no elemento de saída output, mas fazemos isso com configurações adicionais no script e utilizando um outro elemento input especial que é feito para isso e fica oculto (hidden). 
+
+            Obs.: O elemento <output> é uma opção para exibir o resultado de um cálculo ou ação do usuário, mas não é a única opção. Você poderia usar outros elementos HTML para exibir o resultado de um script, como por exemplo: <div>, <span> ou <p>... A escolha do elemento apropriado depende do contexto e do design do seu site ou aplicativo. Porém, usando o elemento output, deixamos o nosso código HTML com o máximo de semântica possível.
+
+            Atributos da tag de formulário output:
+
+            for:
+
+            O atributo "for" aplicado no elemento <output> especifica a relação entre o resultado do cálculo (ou o resultado de uma ação do usuário) e os ELEMENTOS USADOS nesse cálculo.  
+
+            O valor do atributo "for" deve ser uma lista de "id's" dos elementos usados no cálculo separados por espaços, indicando que esses elementos contribuíram com valores de entrada para (ou de outra forma afetaram) o cálculo.
+
+            Portando, quando você estiver trabalhando com o elemento de saída <output>, use o atributo "for" para indicar quais são os componentes de entrada envolvidos no resultado que está sendo renderizado dentro dele.
+
+            Observe que o atributo "for" no elemento <output> tem uma função puramente semântica e não afeta o comportamento do elemento <output>. Você pode omiti-lo se quiser, mas incluí-lo pode tornar seu código mais fácil de entender.
+
+            Especificar a relação entre o resultado do cálculo e os elementos usados no cálculo ajuda a tornar o código mais legível e autoexplicativo... Assim como foi feito no nosso exemplo ( for="n1 n2" ).
+        -->
+    </form>
+
+    <p>Nono Formulário</p>
+    <form action="">
+
+        <p>
+            <label for="inm">Número:</label>
+            <input type="range" name="num" id="inum" min="0" max="5" oninput="ival .innerHTML = Number(inum. value)">
+            <output id="ival">5</output>
+        </p>
+
+        <p>
+            <label for="iano">Em que ano você nasceu?</label>
+            <input type="number" name="ano" id="iano" min="1900" max="2025" oninput="calcIdade()">
+        </p>
+
+        <p>
+            <label for="iidade">Sua idade é</label>
+            <output id="iidade">0</output>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+
+    <script>
+        function calcIdade() {
+            let atual = new Date().getFullYear()
+            iidade.innerHTML = Number(atual) - Number(iano.value)
+        }
+    </script>
 </body>
 </html>

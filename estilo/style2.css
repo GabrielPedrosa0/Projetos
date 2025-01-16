@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(imagens/minimalist\ wallpaper.jpeg);
+    background-image: url('../imagens/minimalist\ wallpaper.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -69,6 +69,25 @@ input::placeholder{
     left: 15px;
 }
 
+.lembrar-esqueci{
+    display: flex;
+    position: absolute;
+    bottom: 40%;
+    width: 99%;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.lembrar-esqueci > input.ch{
+    border: none;
+}
+
+.lembrar-esqueci a{
+    text-decoration: none;
+    color: #fff;
+}
+
 i{
     position: absolute;
     transform: translate(50%, 50%);
@@ -84,13 +103,7 @@ button{
     border-radius: 60px;
 }
 
-a{
-    position: absolute;
-    bottom: 45%;
-    left: 65%;
-    text-decoration: none;
-    color: white;
-}
+
 a :hover{
     text-decoration: underline;
     color: blue;

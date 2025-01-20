@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style9.css">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h1>Bem Vindo</h1>
+    
+    <form action="#">
+
+        
+        <div class="input-box">
+            <label for="inome">Nome:
+                <input type="text" id="inome" placeholder="Seu nome completo">
+            </label>
+        </div>
+        
+        
+        <div class="input-box">
+            <label for="iemail">E-mail:
+                <input type="email" name="email" id="iemail" placeholder="Um e-mail ativo">
+            </label>
+        </div>
+        
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="isxmas" value="M"> <label for="isxmas">Masculino</label>
+            <input type="radio" name="sexo" id="isxfem" value="F"> <label for="isxfem">Feminino</label>
+            <input type="radio" name="sexo" id="isxpd" checked> <label for="isxpd">Prefiro não Dizer</label>
+        </fieldset>
+        
+        <label for="iestr"><input type="checkbox" name="estr" id="iestr">Você é Estrangeiro</label> <!--fazer com que a lista de estados desapareça-->
+        
+        <div class="list" id="iest">
+            <p>Qual estado você é:</p>
+            
+            <select>
+                <option value="" selected>----Escolha----</option>
+                <optgroup label="Região Nordeste">
+                    <option value="Al">Alagoas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="SE">Sergipe</option>
+                </optgroup>
+            
+                <optgroup label="Região Norte">
+                    <option value="AC">Acer</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="PA">Pará</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="TO">Tocantis</option>
+                </optgroup>
+                <optgroup label="Região Centro Oeste">
+                    <option value="DF">Distrito Federal</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                </optgroup>
+                <optgroup label="Região Sudeste">
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espirito Santo</option>
+                </optgroup>
+                <optgroup label="Região Sul">
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+            
+            </select>
+        </div>
+            
+        <p>
+            <label for="imsg">Mensagem</label> <br>
+            <textarea name="msg" id="imsg" cols="45" rows="5" placeholder="Escreva sua mensagem aqui..." ></textarea>
+        </p>
+        
+        <input type="button" class="btn" value="Enviar">
+    </form>
+
+    <script src="script/script.js"></script>
+
+</body>
+</html>

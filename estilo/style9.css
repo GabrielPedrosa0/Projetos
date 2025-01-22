@@ -76,7 +76,9 @@ select > option{
 
 textarea{
     outline: none;
+    padding: 5px;
     border: 2px solid #D5D0CD;
+    border-radius: 15px;
 }
 
 form .btn{

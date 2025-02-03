@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="estilo/style1.css">
-    <title>Cadastro</title>
+    <title>Cadastro | Crie sua conta</title>
 </head>
 <body>
-    
-    <div class="corpo">
-        <form action="">
+
+    <div class="main">
+        <form action="#">
             <h1>Bem Vindo</h1>
             <div class="input-box">
-                <input type="text" placeholder="Nome" required>
+                <i class="ri-user-3-fill"></i>
+                <input type="text" required placeholder="Seu nome ou apilido">
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Sobrenome">
+                <i class="ri-mail-fill"></i>
+                <input type="email" required placeholder="Digite um e-mail ativo">
             </div>
             <div class="input-box">
-                <input type="email" placeholder="E-mail" required>
+                <i class="ri-lock-password-fill"></i>
+                <input type="password" id="" required placeholder="Digite sua senha">
             </div>
 
-            <button type="submit" class="btn">Criar conta</button>
+            <div class="entrar">
+                <a href="login.html">Já tem uma conta</a>
+            </div>
 
-            <div class="login">
-                <p>Já tem uma conta? <a href="login2.html">Entrar</a></p>
+            <div class="btn">
+                <input type="button" value="Cadastrar">
             </div>
         </form>
     </div>

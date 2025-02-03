@@ -36,6 +36,7 @@ form{
     text-align: center;
     margin: 30px 0;
     font-size: 45px;
+    color: #334d77;
 }
 
 .input-box{
@@ -52,11 +53,12 @@ form{
     border: none;
     outline: none;
     background: transparent;
-    border: 2px solid #7F7272;
+    border: 2px solid #e3e7ee;
     border-radius: 45px;
     padding: 8px;
     color: white;
     font-size: 18px;
+    gap: 5px;
 }
 
 input::placeholder{
@@ -65,6 +67,7 @@ input::placeholder{
 
 .input-box i{
     font-size: 25px;
+    color: #334d77;
 }
 
 .lembrar-esqueci{
@@ -90,6 +93,8 @@ input::placeholder{
 }
 
 .btn{
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
     margin: 30px 0;
 }
@@ -97,18 +102,44 @@ input::placeholder{
 .btn input{
     color: #fff;
     height: 50px;
-    width: 75%;
+    width: 40%;
     border-radius: 45px;
     outline: none;
     cursor: pointer;
-    border: 2px solid #7F7272;
+    border: 2px solid #e3e7ee;
     font-size: 25px;
     background: transparent;
 }
 
 .btn input:hover{
-    transition: all 0.3s ease;
-    transform: translate(-3px, -3px);
-    background: #2A93E8;
-    box-shadow: 0 0 10px #2A93E8;
+    border: 1px solid #73B9E6;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #73bae67c;
+}
+
+.btn button{
+    color: #fff;
+    height: 50px;
+    width: 40%;
+    border-radius: 45px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #e3e7ee;
+    font-size: 25px;
+    background: transparent;
+}
+
+button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+button:hover{
+    border: 1px solid #73B9E6;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #73bae67c;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de arquivos</title>
+</head>
+<body>
+    
+    <h1>Upload de Arquivos</h1>
+    <input type="file" id="fileInput" required>
+    <button id="uploadButton">Enviar</button>
+    <div id="message"></div>
+
+    <script>
+
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            const fileInput = document.getElementById('fileInput')
+            const file = fileInput.file[0]
+            const formData = new FormData()
+            formData.append('file', file)
+
+            fetch('http://localhost:3000/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = data.message
+            })
+            .catch(error => {
+                console.error('Erro:', error)
+                document.getElementById('message').innerText = 'Erro ao enviar o arquivo.'
+            })
+        })
+
+    </script>
+
+</body>
+</html>
